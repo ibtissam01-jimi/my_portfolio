@@ -485,19 +485,9 @@ header nav .nav-links li a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-/* Section des projets */
-.projects {
+  .projects {
     width: 100%;
-    height: auto; /* Modifié pour s'adapter à la hauteur du contenu */
+    height: auto;
     padding-bottom: 40px;
 }
 
@@ -527,12 +517,32 @@ header nav .nav-links li a:hover {
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Permet de cacher la description en dehors de la carte */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+/* Animation de la description du bas vers le haut */
+.project-card .project-description {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(19, 48, 102, 0.9), rgba(13, 49, 115, 0.5));
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Apparition de la description sur le hover */
+.project-card:hover .project-description {
+    transform: translateY(0); /* Déplace la description de bas en haut */
+    opacity: 1;
 }
 
 .project-card img {
@@ -572,8 +582,6 @@ header nav .nav-links li a:hover {
         gap: 10px;
     }
 }
-
-
 
 
 
@@ -697,7 +705,7 @@ header nav .nav-links li a:hover {
 }
 
 .footer-icons {
-    display: flex;
+   
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -708,7 +716,7 @@ header nav .nav-links li a:hover {
 .footer-icons a {
     text-decoration: none;
     color:rgb(192, 174, 141); /* Noir */
-    font-size: 24px;
+    font-size: 22px;
     transition: color 0.3s;
 }
 
