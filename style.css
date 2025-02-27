@@ -176,16 +176,11 @@ header nav .nav-links li a:hover {
 }
 
 .btn2 {
-    background-color: black;
+    background-color: white;
     color: rgb(192, 169, 126);
     text-decoration: none;
 }
 
-.btn2:hover {
-    background-color: rgb(199, 178, 139);
-    color: black;
-    border: 1px solid rgb(199, 178, 139);
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
